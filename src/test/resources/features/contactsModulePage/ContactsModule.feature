@@ -43,7 +43,7 @@ Scenario: Create and search Contact
 	And response is not empty
 
  @Positive @testing
-Scenario: Create and delete Contact
+Scenario: Create, update and delete Contact
 	Given request body from static file "contactsModulePage/requests/createContact.json"
     And content type is "application/json"
     And header "X-Api-Override-Phone" with value "1"
@@ -52,6 +52,16 @@ Scenario: Create and delete Contact
     And header "Accept" with value "application/vnd.api+json"
     When the client performs POST request on "{(basePath)}"
     Then status code is 201
+    And response is not empty
+    And let variable "contactID" equal to property "data.id" value
+    Given request body from static file "contactsModulePage/requests/updateContact.json"
+    And content type is "application/json"
+    And header "X-Api-Override-Phone" with value "1"
+    And header "x-Api-Override-Email" with value "1"
+    And header "X-Partial-Record-Validation" with value "1"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs PATCH request on "{(basePath)}/{(contactID)}"
+    Then status code is 200
     And response is not empty
     And let variable "contactID" equal to property "data.id" value
     When the client performs DELETE request on "{(basePath)}/{(contactID)}" 

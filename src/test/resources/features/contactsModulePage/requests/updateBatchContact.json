@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": "%contactID1%",
+            "attributes": {
+                "first_name": "T1"
+            }
+        },
+        {
+            "id": "%contactID2%",
+            "attributes": {
+                "first_name": "T2"
+            }
+        }
+    ]
+}
