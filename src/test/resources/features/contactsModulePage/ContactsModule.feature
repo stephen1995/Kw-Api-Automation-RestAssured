@@ -5,7 +5,7 @@ Feature: API Contacts v2 Contact Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing
+@POST @testing1
     Scenario: Successful login
       Given request body from static file "contactsModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,21 +13,21 @@ Feature: API Contacts v2 Contact Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing
+ @GET @testing1
     Scenario: Get all contact information
       When the client performs GET request on "{(basePath)}"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
 
- @GET @testing
+ @GET @testing1
     Scenario: Get all contact information with filters
       When the client performs GET request on "{(basePath)}?include=interactions&sort=-interactions.interaction_at&filter[interactions.interaction_type][in]=9,10"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
 
- @Positive @testing
+ @Positive @testing1
 Scenario: Create and search Contact
 	Given request body from static file "contactsModulePage/requests/createContact.json"
     And content type is "application/json"
@@ -42,7 +42,7 @@ Scenario: Create and search Contact
 	Then status code is 200
 	And response is not empty
 
- @Positive @testing
+ @Positive @testing1
 Scenario: Create, update and delete Contact
 	Given request body from static file "contactsModulePage/requests/createContact.json"
     And content type is "application/json"
@@ -67,7 +67,7 @@ Scenario: Create, update and delete Contact
     When the client performs DELETE request on "{(basePath)}/{(contactID)}" 
 	Then status code is 204
 
- @Positive @testing
+ @Positive @testing1
 Scenario: Create Batch Contact
 	Given request body from static file "contactsModulePage/requests/createBatchContact.json"
     And content type is "application/json"
@@ -79,7 +79,7 @@ Scenario: Create Batch Contact
     Then status code is 201
     And response is not empty
     
-  @Positive @testing
+  @Positive @testing1
 Scenario: Create and delete Contact Lead
 	Given request body from static file "contactsModulePage/requests/createContactLead.json"
     And content type is "application/json"

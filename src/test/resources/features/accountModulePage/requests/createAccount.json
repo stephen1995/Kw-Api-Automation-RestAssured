@@ -1,0 +1,15 @@
+{
+  "data": {
+    "attributes": {
+      "secret": "",
+      "key": "AC0f8c83076dbb581f4cec15d1bce49643"
+    },
+    "relationships": {
+      "service": {
+        "data": {
+          "id": 1
+        }
+      }
+    }
+  }
+}
