@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "id": "%contactID1%",
+      "type": "contacts"
+    },
+    {
+      "id": "%contactID2%",
+      "type": "contacts"
+    }
+  ]
+}

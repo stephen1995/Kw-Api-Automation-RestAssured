@@ -1,0 +1,35 @@
+{
+  "data": {
+    "type": "addresses",
+    "attributes": {
+      "address_line_1": "address1",
+      "address_line_2": "address2",
+      "address_line_3": "address3",
+      "address_line_4": "address4",
+      "city": "city lima",
+      "city_locality": "limacity",
+      "state_region": "Missouri peru",
+      "country": "Peru",
+      "postal_code": "99999",
+      "lat": -57.999999,
+      "lng": 54.999999,
+      "is_current": true,
+      "ownership_status": 3,
+      "description": "Best place in the world for ever",
+      "neighborhood": "some neighborhood lima",
+      "is_primary": true,
+      "label": "home lima",
+      "is_mailing_address": false
+    },
+    "relationships": {
+      "contacts": {
+        "data": [
+          {
+            "id": "%contactId%",
+            "type": "contacts"
+          }
+        ]
+      }
+    }
+  }
+}

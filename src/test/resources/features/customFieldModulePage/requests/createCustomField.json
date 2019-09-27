@@ -1,0 +1,12 @@
+{
+  "data": {
+    "attributes": {
+      "name": "%nameCustomField%",
+      "custom_field_type": "3",
+      "include_in_filters": true,
+      "availability": [
+        "contacts"
+      ]
+    }
+  }
+}
