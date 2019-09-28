@@ -1,0 +1,21 @@
+{
+  "data": {
+    "attributes": {
+      "property_id": 5,
+      "date": "2019-06-10",
+      "label": "blah"
+    },
+    "relationships": {
+      "contact": {
+        "data": {
+          "id": "%contactID%"
+        }
+      },
+      "address": {
+        "data": {
+          "id": "%addressID%"
+        }
+      }
+    }
+  }
+}

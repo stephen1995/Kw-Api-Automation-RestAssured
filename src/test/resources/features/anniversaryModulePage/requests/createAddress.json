@@ -1,0 +1,35 @@
+{
+  "data": {
+    "type": "addresses",
+    "attributes": {
+      "address_line_1": "11036 Konopelski Shore Suite 447",
+      "address_line_2": "Suite 679",
+      "address_line_3": "Apt. 046",
+      "address_line_4": "Suite 557",
+      "city": "Boylehaven",
+      "city_locality": "cupiditate",
+      "state_region": "Missouri",
+      "country": "Iran",
+      "postal_code": "82371",
+      "lat": -57.359989,
+      "lng": 54.022906,
+      "is_current": false,
+      "ownership_status": 2,
+      "description": "Best place in the world",
+      "neighborhood": "some neighborhood",
+      "is_primary": false,
+      "label": "home",
+      "is_mailing_address": true
+    },
+    "relationships": {
+      "contacts": {
+        "data": [
+          {
+            "id": "%contactID%",
+            "type": "contacts"
+          }
+        ]
+      }
+    }
+  }
+}

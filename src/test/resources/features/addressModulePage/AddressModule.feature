@@ -5,7 +5,7 @@ Feature: API Address Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing
+@POST @testing1
     Scenario: Successful login
       Given request body from static file "addressModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,35 +13,35 @@ Feature: API Address Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing
+ @GET @testing1
     Scenario: Get all address information
       When the client performs GET request on "{(basePath)}/addresses"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
       
- @GET @testing
+ @GET @testing1
     Scenario: Search address by bounding information
       When the client performs GET request on "{(basePath)}/?filter[coordinates][is]=49.7232725556,21.8305051327/49.7232725556,24.7232568264/50.5752657049,24.7232568264/50.5752657049,21.8305051327/49.7232725556,21.8305051327"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
 
- @GET @testing
+ @GET @testing1
     Scenario: Search address by radius information
       When the client performs GET request on "{(basePath)}/?filter[radius][is]=2000/49.814616,23.961182"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
       
-  @GET @testing
+  @GET @testing1
     Scenario: Search get geocode
       When the client performs GET request on "{(basePath)}/addresses/geocode"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
 
- @Positive @testing
+ @Positive @testing1
 Scenario Outline: Create, update and delete Address
 	Given request body from static file "addressModulePage/requests/createContact.json"
     And content type is "application/json"
