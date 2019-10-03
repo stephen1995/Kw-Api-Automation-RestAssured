@@ -1,0 +1,21 @@
+{
+    "data": {
+
+        "relationships": {
+            "phones": {
+                "data": [
+                    {                   
+                        "attributes": {
+                            "number": "+51986194999",
+                            "country_code": "PE",
+                            "formatted_number": "+51986194999",
+                            "is_primary": true,
+                            "is_current": true,
+                            "label": "Mobile"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "data": {
+        "type": "notes",
+        "attributes": {
+            "noteable_ids": [
+                "%contactId%"
+            ],
+            "noteable_type": "contacts",
+            "note": "Description",
+            "title": "Stephen Test"
+        }
+    }
+}
