@@ -1,0 +1,30 @@
+{
+	"data": {
+		"attributes": {
+			"prefix": "Mr",
+			"first_name": "Telly",
+			"middle_name": "Senior",
+			"last_name": "Beier",
+			"preferred_name": "Telly Beier",
+			"legal_name": "Telly Senior Beier",
+			"suffix": "I",
+			"date_of_birth": "2019-05-25"
+		},
+		"relationships": {
+			"object-custom-fields": {
+				"data": [
+					{
+						"attributes": {
+							"custom_field": "4 notes",
+							"custom_field_value": "another",
+							"custom_field_tag": {
+								"tag": "blender",
+								"color": "blue"
+							}
+						}
+					}
+				]
+			}
+		}
+	}
+}

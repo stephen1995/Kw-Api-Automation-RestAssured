@@ -7,7 +7,7 @@ Feature: API custom field v2
 
 @POST @testing1
     Scenario: Successful login
-      Given request body from static file "companiesModulePage/requests/login.json"
+      Given request body from static file "customFieldModulePage/requests/login.json"
       And content type is "application/json"
       When the client performs POST request on "login"
       Then let variable "token" equal to property "access_token" value

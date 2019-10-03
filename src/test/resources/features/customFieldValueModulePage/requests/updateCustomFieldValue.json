@@ -1,0 +1,16 @@
+{
+  "data": {
+    "type": "custom-field-values",
+    "attributes": {
+         "value": "night2"
+    },
+    "relationships": {
+      "custom-field": {
+        "data": {
+          "type": "custom-fields",
+          "id": "%idCustomFieldValue%"
+        }
+      }
+    }
+  }
+}

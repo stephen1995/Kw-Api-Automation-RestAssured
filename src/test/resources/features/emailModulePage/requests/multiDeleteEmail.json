@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "id": "%emails1%",
+      "type": "emails"
+    },
+    {
+      "id": "%emails2%",
+      "type": "emails"
+    },
+    {
+      "id": "%emails3%",
+      "type": "emails"
+    }
+  ]
+}
