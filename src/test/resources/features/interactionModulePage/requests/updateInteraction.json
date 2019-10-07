@@ -1,0 +1,26 @@
+{
+  "data": {
+    "attributes": {
+      "interaction_type": "%idInteractionType%",
+      "interaction_at": "2009-08-04 00:00:00",
+      "initiated_by": 1,
+      "phone_number": "219.919.9259 x9999",
+      "outcome": 1
+    },
+    "relationships": {
+      "contact": {
+        "data": {
+          "id": "%idContactExtractor%"
+        }
+      },
+      "note": {
+        "data": {
+          "attributes": {
+            "note": "minima test",
+            "title": "totam test"
+          }
+        }
+      }
+    }
+  }
+}

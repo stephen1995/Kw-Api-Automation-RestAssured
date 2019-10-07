@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "id": "%contactIDExtractor1%",
+      "type": "contacts"
+    },
+    {
+      "id": "%contactIDExtractor2%",
+      "type": "contacts"
+    },
+    {
+      "id": "%contactIDExtractor3%",
+      "type": "contacts"
+    },
+    {
+      "id": "%contactIDExtractor4%",
+      "type": "contacts"
+    }
+  ]
+}

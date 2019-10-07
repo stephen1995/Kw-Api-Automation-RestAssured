@@ -1,0 +1,10 @@
+{
+  "data": {
+    "type": "sources",
+    "attributes": {
+      "label": "Some Label Test",
+      "is_archived": true,
+      "vendor": "Some Vendor Test"
+    }
+  }
+}

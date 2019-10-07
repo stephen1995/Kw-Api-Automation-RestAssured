@@ -1,0 +1,29 @@
+{
+	"data": {
+		"type": "",
+		"attributes": {
+			"assignment": "as",
+			"emails": [{
+				"attributes": {
+					"email": "%emailExtractor%",
+					"is_primary": true
+				}
+			}],
+			"first_name": "Alice",
+			"last_name": "Keys",
+			"phones": [{
+				"attributes": {
+					"is_primary": true,
+					"number": "(612) 974-2004",
+					"country_code": "US",
+					"dialing_code": "1",
+					"formatted_number": ""
+				}
+			}],
+			"sources": [{
+				"id": "%idSourcesExtractor%"
+			}],
+			"status": 1
+		}
+	}
+}

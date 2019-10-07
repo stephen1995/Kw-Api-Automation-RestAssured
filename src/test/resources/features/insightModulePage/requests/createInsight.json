@@ -1,0 +1,18 @@
+{ 
+	"data": 
+	{ 
+		"id":50127, 
+		"type": "contacts", 
+		"relationships": { 
+			"contact": { 
+				"data": { 
+					"id": "%idContactExtractor%" 
+				} 
+			} 
+		}, 
+		"attributes": { 
+			"source": "test3",
+			"data": "{\"text\":\"Here can be any structure\"}"
+		} 
+	}
+}

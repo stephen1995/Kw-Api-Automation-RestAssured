@@ -1,0 +1,27 @@
+{
+  "data": {
+    "attributes": {
+      "interaction_type": "%idInteractionType%",
+      "interaction_at": "2006-08-04 00:00:00",
+      "initiated_by": 1,
+      "phone_number": "213.917.9259 x6099",
+      "outcome": 1,
+      "has_responded": 1
+    },
+    "relationships": {
+      "contact": {
+        "data": {
+          "id": "%idContactExtractor%"
+        }
+      },
+      "note": {
+        "data": {
+          "attributes": {
+            "note": "minima",
+            "title": "totam"
+          }
+        }
+      }
+    }
+  }
+}

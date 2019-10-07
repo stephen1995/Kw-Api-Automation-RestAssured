@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "relative_type": "15",
+      "label": "update family"
+    },
+	"relationships": {
+      "related-to": {
+        "data": {
+          "id": "%idContactExtractor1%"
+        }
+      },
+      "contact": {
+        "data": {
+          "id": "%idContactExtractor2%"
+        }
+      }
+    }
+  }
+}

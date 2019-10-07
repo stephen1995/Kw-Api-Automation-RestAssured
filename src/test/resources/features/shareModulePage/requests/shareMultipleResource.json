@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "resource_id": "%contactIDExtractor2%",
+        "resource_type": "contacts",
+        "action": "attach",
+        "kw_uid": "556397",
+        "access": {
+          "can_update": true
+        }
+      }
+    },
+    {
+      "attributes": {
+        "resource_id": "%contactIDExtractor3%",
+        "resource_type": "contacts",
+        "action": "attach",
+        "kw_uid": "556397",
+        "access": {
+          "can_update": false
+        }
+      }
+    },
+    {
+      "attributes": {
+        "resource_id": "%contactIDExtractor4%",
+        "resource_type": "contacts",
+        "action": "detach",
+        "kw_uid": "556397"
+      }
+    }
+  ]
+}

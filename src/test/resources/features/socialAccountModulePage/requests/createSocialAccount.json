@@ -1,0 +1,18 @@
+{
+  "data": {
+    "type": "social-accounts",
+    "attributes": {
+      "social_network_id": 1,
+      "identifier": "example1",
+      "url": "https://www.facebook.com/example1"
+    },
+    "relationships": {
+      "contact": {
+        "data": {
+          "type": "contacts",
+          "id": "%idContactExtractor%"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "id": "%idSourcesExtractor1%",
+      "type": "sources"
+    },
+    {
+      "id": "%idSourcesExtractor2%",
+      "type": "sources"
+    },
+    {
+      "id": "%idSourcesExtractor3%",
+      "type": "sources"
+    }
+    
+  ]
+}

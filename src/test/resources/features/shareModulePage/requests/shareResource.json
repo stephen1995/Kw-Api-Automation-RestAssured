@@ -1,0 +1,13 @@
+{
+  "data": {
+    "attributes": {
+      "resource_id": "%contactIDExtractor1%",
+      "resource_type": "contacts",
+      "action": "attach",
+      "kw_uid": "556397",
+      "access": {
+        "can_update": false
+      }
+    }
+  }
+}

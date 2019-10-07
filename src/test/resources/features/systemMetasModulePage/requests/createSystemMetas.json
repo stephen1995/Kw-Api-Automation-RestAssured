@@ -1,0 +1,10 @@
+{
+  "data": {
+    "type": "system-metas",
+    "attributes": {
+      "name": "PieSync",
+      "variable": "piesync_trash",
+      "type": 1
+    }
+  }
+}
