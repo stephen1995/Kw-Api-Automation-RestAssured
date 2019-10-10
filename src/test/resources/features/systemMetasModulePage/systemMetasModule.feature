@@ -5,7 +5,7 @@ Feature: API System Metas Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing
+@POST @testing1
     Scenario: Successful login
       Given request body from static file "sourceModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,14 +13,14 @@ Feature: API System Metas Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing
+ @GET @testing1
     Scenario: Get all source information
       When the client performs GET request on "{(basePath)}/system-metas"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
       
- @Positive @testing
+ @Positive @testing1
 Scenario: Create, update, list and delete source
 
     Given request body from static file "systemMetasModulePage/requests/createSystemMetas.json" 

@@ -1,0 +1,9 @@
+{
+  "data": {
+    "attributes": {
+      "type": "import",
+      "name": "Template",
+      "json": "{\"prefix\":{\"column\":\"prefix\",\"field\":\"prefix\",\"type\":\"person\",\"rules\":\"string\"}}"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "data": {
+        "id": "%idContactExtractor%",
+        "type": "contacts",
+        "relationships": {
+            "tags": {
+                "data": [
+                    {
+                        "type": "tags",
+                        "id": "%idTagExtractor%"
+                    },
+                    {
+                        "type": "tags",
+                        "tag": "Seller"
+                    }
+                ]
+            }
+        }
+    }
+}

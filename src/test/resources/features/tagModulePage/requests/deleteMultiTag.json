@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "id": "%idTagExtractor1%",
+      "type": "tags"
+    },
+    {
+      "id": "%idTagExtractor2%",
+      "type": "tags"
+    },
+    {
+      "id": "%idTagExtractor3%",
+      "type": "tags"
+    }
+  ]
+}

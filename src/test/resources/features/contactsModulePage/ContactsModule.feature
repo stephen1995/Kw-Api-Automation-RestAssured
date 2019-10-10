@@ -5,7 +5,7 @@ Feature: API Contacts v2 Contact Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "contactsModulePage/requests/login.json"
       And content type is "application/json"
@@ -20,6 +20,20 @@ Feature: API Contacts v2 Contact Page
       Then status code is 200
       And response is not empty
 
+ @POST @testing1
+    Scenario: Export contact 
+      When the client performs POST request on "{(basePath)}/export/contacts"
+      And content type is "application/json"
+      Then status code is 202
+      And response is not empty
+      
+ @POST @testing1
+    Scenario: Export contact label
+      When the client performs POST request on "{(basePath)}/export/labels"
+      And content type is "application/json"
+      Then status code is 202
+      And response is not empty
+
  @GET @testing1
     Scenario: Get all contact information with filters
       When the client performs GET request on "{(basePath)}?include=interactions&sort=-interactions.interaction_at&filter[interactions.interaction_type][in]=9,10"
@@ -28,22 +42,7 @@ Feature: API Contacts v2 Contact Page
       And response is not empty
 
  @Positive @testing1
-Scenario: Create and search Contact
-	Given request body from static file "contactsModulePage/requests/createContact.json"
-    And content type is "application/json"
-    And header "X-Api-Override-Phone" with value "1"
-    And header "x-Api-Override-Email" with value "1"
-    And header "X-Partial-Record-Validation" with value "1"
-    And header "Accept" with value "application/vnd.api+json"
-    When the client performs POST request on "{(basePath)}"
-    Then status code is 201
-    And let variable "contactID" equal to property "data.id" value
-    When the client performs GET request on "{(basePath)}/{(contactID)}" 
-	Then status code is 200
-	And response is not empty
-
- @Positive @testing1
-Scenario: Create, update and delete Contact
+Scenario: Create, update show and delete Contact
 	Given request body from static file "contactsModulePage/requests/createContact.json"
     And content type is "application/json"
     And header "X-Api-Override-Phone" with value "1"
@@ -64,6 +63,9 @@ Scenario: Create, update and delete Contact
     Then status code is 200
     And response is not empty
     And let variable "contactID" equal to property "data.id" value
+    When the client performs GET request on "{(basePath)}/{(contactID)}" 
+	Then status code is 200
+	And response is not empty
     When the client performs DELETE request on "{(basePath)}/{(contactID)}" 
 	Then status code is 204
 
@@ -114,3 +116,55 @@ Scenario: Create and delete Contact Lead
     And let variable "contactID" equal to property "data.id" value
     When the client performs DELETE request on "{(basePath)}/{(contactID)}" 
 	Then status code is 204
+	
+ @Positive @testing1
+Scenario: Create delete Contact archived
+	Given request body from static file "contactsModulePage/requests/createContact.json"
+    And content type is "application/json"
+    And header "X-Api-Override-Phone" with value "1"
+    And header "x-Api-Override-Email" with value "1"
+    And header "X-Partial-Record-Validation" with value "1"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs POST request on "{(basePath)}"
+    Then status code is 201
+    And response is not empty
+    And let variable "contactID" equal to property "data.id" value
+    When the client performs DELETE request on "{(basePath)}/{(contactID)}" 
+	Then status code is 204
+	
+ @Positive @testing1
+Scenario: Create delete Contact permanent
+	Given request body from static file "contactsModulePage/requests/createContact.json"
+    And content type is "application/json"
+    And header "X-Api-Override-Phone" with value "1"
+    And header "x-Api-Override-Email" with value "1"
+    And header "X-Partial-Record-Validation" with value "1"
+    And header "X-API-PERMANENT-DELETE" with value "1"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs POST request on "{(basePath)}"
+    Then status code is 201
+    And response is not empty
+    And let variable "contactID" equal to property "data.id" value
+    When the client performs DELETE request on "{(basePath)}/{(contactID)}" 
+	Then status code is 204	
+	
+ @Positive @testing
+Scenario: Soft delete Contact 
+	Given request body from static file "contactsModulePage/requests/createContact.json"
+    And content type is "application/json"
+    And header "X-Api-Override-Phone" with value "1"
+    And header "x-Api-Override-Email" with value "1"
+    And header "X-Partial-Record-Validation" with value "1"
+    And header "X-API-RESTORE" with value "1"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs POST request on "{(basePath)}"
+    Then status code is 201
+    And response is not empty
+    And let variable "contactID" equal to property "data.id" value
+    When the client performs DELETE request on "{(basePath)}/{(contactID)}" 
+	Then status code is 204	
+	And let variable "contactID" equal to property "data.id" value
+    When the client performs GET request on "{(basePath)}/{(contactID)}" 
+	Then a failure is expected
+    When the client performs PATCH request on "{(basePath)}/{(contactID)}" 
+	Then status code is 200	
