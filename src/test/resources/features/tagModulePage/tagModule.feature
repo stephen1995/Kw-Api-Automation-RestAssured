@@ -82,7 +82,7 @@ Scenario Outline: Create, update, show, delete, attach, set, detach tag
  	|ContactId	  |  TagId   |
  	|{(contactID)}|{(tagID)} |
  	
-@PATCH @testing
+@PATCH @testing1
 Scenario Outline: Delete multi tag
     	
    	Given request body from static file "tagModulePage/requests/createTag.json"
@@ -112,7 +112,7 @@ Scenario Outline: Delete multi tag
     Given request body from file "tagModulePage/requests/deleteMultiTag.json" with values "<TagId1>,<TagId2>,<TagId3>" 
     |%idContactExtractor1%|%idContactExtractor2%|%idContactExtractor3%|
     And content type is "application/json"
-    When the client DELETE PATCH request on "{(basePath)}/tags"
+    When the client DELETE request on "{(basePath)}/tags"
     Then status code is 200
     And response is not empty
         
