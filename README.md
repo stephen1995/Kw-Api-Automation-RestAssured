@@ -28,3 +28,8 @@ Execute project:
  - Click right on the Project 
  - Go to Run As 
  - Select Maven install
+
+Note:
+- You can select the feature that should be execute adding the tag that configures in the java file: RunCukesTest.java
+For example:
+       tags = "@testing"
