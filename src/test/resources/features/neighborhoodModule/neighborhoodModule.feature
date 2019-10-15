@@ -5,7 +5,7 @@ Feature: Neighborhood API Testing
     Given let variable "basePath" equal to "/v2/contacts"
     And overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @NBHTesting
+@POST @testing
     Scenario: Successful login
       Given request body from static file "emailModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,14 +13,14 @@ Feature: Neighborhood API Testing
       Then let variable "token" equal to property "access_token" value
       And status code is 200
   
- @GET @NBHTesting
+ @GET @testing
     Scenario: Get all neighborhoods information
       When the client performs GET request on "/v1/boundaries/bounding_box?top_left[lat]=51&top_left[lon]=-132&bottom_right[lat]=24&bottom_right[lon]=-63&filter[boundary_type]=neighborhood&page[limit]=100"
       Then status code is 200
       And response is not empty
 
       
- @PATCH @NBHTesting
+ @PATCH @testing
 Scenario Outline: Create a contact and subscribe neighborhood
 	Given request body from static file "neighborhoodModule/requests/createContact.json"
     And content type is "application/json"
@@ -45,7 +45,7 @@ Scenario Outline: Create a contact and subscribe neighborhood
  	|{(contactID)}|
  	
  	
-  @PATCH @NBHTesting
+  @PATCH @testing
 Scenario Outline: Create a contact and Unsubscribe neighborhood
 	Given request body from static file "neighborhoodModule/requests/createContact.json"
     And content type is "application/json"

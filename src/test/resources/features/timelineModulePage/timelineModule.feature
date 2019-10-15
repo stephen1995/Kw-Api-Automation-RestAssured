@@ -5,7 +5,7 @@ Feature: API Timeline Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "timelineModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,7 +13,7 @@ Feature: API Timeline Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @Positive @testing1
+ @Positive @testing
 Scenario: Get timelines
 
 	Given request body from static file "timelineModulePage/requests/createContact.json"

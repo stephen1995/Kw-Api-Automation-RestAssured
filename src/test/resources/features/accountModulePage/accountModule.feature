@@ -5,7 +5,7 @@ Feature: API Account v2
     Given let variable "basePath" equal to "communications/accounts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@testing
     Scenario: Successful login
       Given request body from static file "accountModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,7 +13,7 @@ Feature: API Account v2
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
 
- @Positive @testing1
+@testing
 Scenario: Create, update and delete Account
 	Given request body from static file "accountModulePage/requests/createAccount.json"
     And content type is "application/json"

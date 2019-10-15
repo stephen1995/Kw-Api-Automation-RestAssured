@@ -5,7 +5,7 @@ Feature: Phones API Testing
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @PhoneTesting
+@POST @testing
     Scenario: Successful login
       Given request body from static file "phonesModule/requests/login.json"
       And content type is "application/json"
@@ -13,14 +13,14 @@ Feature: Phones API Testing
       Then let variable "token" equal to property "access_token" value
       And status code is 200
   
- @GET @PhoneTesting
+ @GET @testing
     Scenario: Get all Phones information
       When the client performs GET request on "{(basePath)}/phones"
       Then status code is 200
       And response is not empty
 
       
- @Positive @PhoneTesting
+ @Positive @testing
 Scenario Outline: Create multiple contacts then delete their phones
 	Given request body from static file "phonesModule/requests/CreateBatchContact.json"
     And content type is "application/json"
@@ -33,7 +33,7 @@ Scenario Outline: Create multiple contacts then delete their phones
     And response is not empty
     And let variable "contactId1" equal to property "data[0].id" value
     And let variable "contactId2" equal to property "data[1].id" value
-    And response contains "is_deleted"
+#    And response contains "is_deleted"
     And response contains "true"
  
     When the client performs GET request on "{(basePath)}/{(contactId1)}/?include=phones"   
@@ -59,10 +59,10 @@ Scenario Outline: Create multiple contacts then delete their phones
 
     Examples: 
 		| PhoneId1		|PhoneId2 	|
-		| {(phoneId1)}  	|{(phoneId2)}	|
+		| {(phoneId1)}  |{(phoneId2)}	|
  	
  	
-  @PATCH @PhoneTesting
+  @PATCH @testing
 Scenario Outline: Create a contact and add/update/delete phone
 	Given request body from static file "phonesModule/requests/CreateContact.json"
     And content type is "application/json"

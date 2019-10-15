@@ -5,7 +5,7 @@ Feature: API Email Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "emailModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,7 +13,7 @@ Feature: API Email Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing1
+ @GET @testing
     Scenario: Get all emails information
       When the client performs GET request on "{(basePath)}/emails"
       And content type is "application/json"
@@ -21,7 +21,7 @@ Feature: API Email Page
       And response is not empty
 
       
- @Positive @testing1
+ @Positive @testing
 Scenario Outline: Create, update, list and delete emails
 	Given request body from static file "emailModulePage/requests/createContact.json"
     And content type is "application/json"
@@ -63,10 +63,10 @@ Scenario Outline: Create, update, list and delete emails
 
  	Examples:
  	| ContactId	    | EmailId	  | Email1  			| Email2			 |
- 	| {(contactId)} | {(emailId)} | ema1test@gmail.com	| ema2test@gmail.com |
+ 	| {(contactId)} | {(emailId)} | ema3test@gmail.com	| ema4test@gmail.com |
  	
  
-  @Positive @testing1
+  @Positive @testing
 Scenario Outline: multi delete emails
 	Given request body from static file "emailModulePage/requests/createContact.json"
     And content type is "application/json"

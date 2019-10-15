@@ -5,7 +5,7 @@ Feature: API custom field v2
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "customFieldModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,16 +13,16 @@ Feature: API custom field v2
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing1
-    Scenario: Get all companies information
+ @GET @testing
+    Scenario: Get all custom fields information
       When the client performs GET request on "{(basePath)}/custom-fields"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
 
  
- @Positive @testing1
-Scenario Outline: Create, update and delete custom Field
+ @Positive @testing
+Scenario Outline: Create,show, update and delete custom Field
 	Given request body from file "customFieldModulePage/requests/createCustomField.json" with values "<customField>"  
 		|%nameCustomField%|
     And content type is "application/json"
@@ -32,13 +32,16 @@ Scenario Outline: Create, update and delete custom Field
     Then status code is 201
     And response is not empty
     And let variable "customFieldID" equal to property "data.id" value
-    Given request body from static file "customFieldModulePage/requests/updateCustomfield.json"
+    
+    Given request body from file "customFieldModulePage/requests/updateCustomfield.json" with values "<customFieldUpdate>"
+    	|%nameUpdateCustomField%|
     And content type is "application/json"
     And header "x-api-sync" with value "1"
     And header "Accept" with value "application/vnd.api+json"
     When the client performs PATCH request on "{(basePath)}/{(customFieldID)}"
     Then status code is 200
     And response is not empty
+    
     When the client performs GET request on "{(basePath)}/{(customFieldID)}"
 	Then status code is 200
     And response is not empty
@@ -46,5 +49,5 @@ Scenario Outline: Create, update and delete custom Field
     When the client performs DELETE request on "{(basePath)}/{(customFieldID)}" 
 	Then status code is 204
 	    Examples: 
-		| customField		|
-		| CustomFieldEma2  	|
+		| customField		 | customFieldUpdate	|
+		| CustomFieldEma16   | ematest1update1      |

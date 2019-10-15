@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 		plugin = { "pretty", "json:target/cucumber.json" },
 		features = { "classpath:features/" },
 		glue = "com.kwri.auto",
-		tags = "@testing",
+		tags = "@testing1",
 		strict = true, 
 		monochrome = true
 	)

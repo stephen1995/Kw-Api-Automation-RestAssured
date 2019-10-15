@@ -5,7 +5,7 @@ Feature: API custom field value v2
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "customFieldValueModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,7 +13,7 @@ Feature: API custom field value v2
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing1
+ @GET @testing
     Scenario: Get all custom field value information
       When the client performs GET request on "{(basePath)}/custom-field-values"
       And content type is "application/json"
@@ -21,7 +21,7 @@ Feature: API custom field value v2
       And response is not empty
 
  
- @Positive @testing1
+ @Positive @testing
 Scenario Outline: Create, update and delete custom Field value
 	Given request body from file "customFieldValueModulePage/requests/createCustomField.json" with values "<customField>"  
 		|%nameCustomField%|
@@ -62,5 +62,5 @@ Scenario Outline: Create, update and delete custom Field value
 	When the client performs DELETE request on "{(basePath)}/custom-fields/<customFieldValue>" 
 	Then status code is 204
 	    Examples: 
-		| customField		|customFieldValue  |
-		| CustomFieldEma9  	|{(customFieldID)} |
+		| customField		        |customFieldValue  |
+		| CustomFieldValueEma1  	|{(customFieldID)} |

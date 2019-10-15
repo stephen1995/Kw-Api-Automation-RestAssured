@@ -5,7 +5,7 @@ Feature: API Interaction Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "interactionModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,14 +13,14 @@ Feature: API Interaction Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing1
+ @GET @testing
     Scenario: Get all interaction information
       When the client performs GET request on "{(basePath)}/interactions"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
       
- @Positive @testing1
+ @Positive @testing
 Scenario Outline: Create, update, list and delete interaction
 
 	Given request body from static file "interactionModulePage/requests/createContact.json"
@@ -67,10 +67,8 @@ Scenario Outline: Create, update, list and delete interaction
   	|20              | {(contactId)}  |{(interactionId)} |
   	|21              | {(contactId)}  |{(interactionId)} | 	 		
 
-  	
-  	
-  	
-  	@Positive @testing1
+
+  	@Positive @testing
 Scenario Outline: Delete multiple interaction
 
 	Given request body from static file "interactionModulePage/requests/createContact.json"

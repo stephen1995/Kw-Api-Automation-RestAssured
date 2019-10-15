@@ -5,7 +5,7 @@ Feature: Tag API Testing
     Given let variable "basePath" equal to "/v2/contacts"
     And overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "tagModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,13 +13,13 @@ Feature: Tag API Testing
       Then let variable "token" equal to property "access_token" value
       And status code is 200
   
- @GET @testing1
+ @GET @testing
     Scenario: Get all tags information
       When the client performs GET request on "{(basePath)}/tags"
       Then status code is 200
       And response is not empty
       
- @PATCH @testing1
+ @PATCH @testing
 Scenario Outline: Create, update, show, delete, attach, set, detach tag
 	Given request body from static file "tagModulePage/requests/createContact.json"
     And content type is "application/json"
@@ -82,7 +82,7 @@ Scenario Outline: Create, update, show, delete, attach, set, detach tag
  	|ContactId	  |  TagId   |
  	|{(contactID)}|{(tagID)} |
  	
-@PATCH @testing1
+@PATCH @testing
 Scenario Outline: Delete multi tag
     	
    	Given request body from static file "tagModulePage/requests/createTag.json"

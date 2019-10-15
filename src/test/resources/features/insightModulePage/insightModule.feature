@@ -5,7 +5,7 @@ Feature: API Insight Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "insightModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,14 +13,14 @@ Feature: API Insight Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing1
+ @GET @testing
     Scenario: Get all insights information
       When the client performs GET request on "{(basePath)}/insights"
       And content type is "application/json"
       Then status code is 200
       And response is not empty
       
- @Positive @testing1
+ @Positive @testing
 Scenario Outline: Create, update, list and delete insights
 	Given request body from static file "insightModulePage/requests/createContact.json"
     And content type is "application/json"

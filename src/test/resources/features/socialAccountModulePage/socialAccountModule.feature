@@ -5,7 +5,7 @@ Feature: API social account Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "socialAccountModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,7 +13,7 @@ Feature: API social account Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing1
+ @GET @testing
     Scenario: Get all social account information
       When the client performs GET request on "{(basePath)}/social-accounts"
       And content type is "application/json"
@@ -21,7 +21,7 @@ Feature: API social account Page
       And response is not empty
 
       
- @Positive @testing1
+ @Positive @testing
 Scenario Outline: Create, update and delete social account
 	Given request body from static file "socialAccountModulePage/requests/createContact.json"
     And content type is "application/json"

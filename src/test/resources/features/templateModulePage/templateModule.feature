@@ -5,7 +5,7 @@ Feature: Template API Testing
     Given let variable "basePath" equal to "/v2/contacts"
     And overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@POST @testing
     Scenario: Successful login
       Given request body from static file "tagModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,13 +13,13 @@ Feature: Template API Testing
       Then let variable "token" equal to property "access_token" value
       And status code is 200
   
- @GET @testing1
+ @GET @testing
     Scenario: Get all templates information
       When the client performs GET request on "{(basePath)}/templates"
       Then status code is 200
       And response is not empty
       
- @PATCH @testing1
+ @PATCH @testing
 Scenario: Create, update, show, delete templates
 
    	Given request body from static file "templateModulePage/requests/createTemplate.json"

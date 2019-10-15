@@ -5,7 +5,7 @@ Feature: API Anniversary Page
     Given let variable "basePath" equal to "/v2/contacts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@POST @testing1
+@testing
     Scenario: Successful login
       Given request body from static file "anniversaryModulePage/requests/login.json"
       And content type is "application/json"
@@ -13,7 +13,7 @@ Feature: API Anniversary Page
       Then let variable "token" equal to property "access_token" value
       Then status code is 200
   
- @GET @testing1
+@testing
     Scenario: Get all anniversary information
       When the client performs GET request on "{(basePath)}/anniversaries"
       And content type is "application/json"
@@ -21,7 +21,7 @@ Feature: API Anniversary Page
       And response is not empty
 
       
- @Positive @testing1
+@testing
 Scenario Outline: Create, update and delete Anniversary
 	Given request body from static file "anniversaryModulePage/requests/createContact.json"
     And content type is "application/json"
