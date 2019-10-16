@@ -33,3 +33,13 @@ Note:
 - You can select the feature that should be execute adding the tag that configures in the java file: RunCukesTest.java
 For example:
        tags = "@testing"
+       
+- Change the values in the outlines scenarios for these features:
+  
+  leadModulePage
+  
+  customField ModulePage
+  
+  customFielValuedModulePage
+  
+  email Module Page
