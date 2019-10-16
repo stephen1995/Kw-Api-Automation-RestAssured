@@ -1,0 +1,66 @@
+{
+  "data": {
+    "type": "recruits",
+    "id": "7",
+    "attributes": {
+      "org_id": 5663,
+      "phase_id": 1,
+      "contact_id": 435331,
+      "prefix": "Mr.",
+      "suffix": null,
+      "first_name": "John",
+      "middle_name": "Beatles",
+      "last_name": "Lennon",
+      "legal_name": "John Lennon",
+      "primary_email": "mail@example.com",
+      "primary_phone": "+1 514-794-7740",
+      "date_of_birth": "1996-02-02",
+      "created_at": "2019-07-04T04:04:12+00:00",
+      "updated_at": "2019-07-04T04:04:12+00:00",
+      "is_starred": true
+    },
+    "relationships": {
+      "phones": {
+        "data": [
+          {
+            "type": "phones",
+            "attributes": {
+              "country": "US",
+              "number": "+1 202-515-1212"
+            }
+          },
+          {
+            "type": "phones",
+            "attributes": {
+              "country": "US",
+              "number": "+1 212-555-1111"
+            }
+          }
+        ]
+      },
+      "sources": {
+        "data": [
+          {
+            "type": "sources",
+            "attributes": {
+              "label": "New Label",
+              "vendor": "Kerrel William"
+            }
+          }
+        ]
+      },
+      "company": {
+        "type": "companies",
+        "data": {
+          "attributes": {
+            "name": "Acme Inc",
+            "address": "3114 Farrell Mall South Cliffordville, OH 12336-2071"
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "https://qa-kong.command-api.kw.com/recruits/7"
+    }
+  }
+}

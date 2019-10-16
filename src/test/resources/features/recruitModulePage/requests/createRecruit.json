@@ -1,0 +1,54 @@
+{
+  "data": {
+    "attributes": {
+      "mls_id": "DC1111",
+      "phase_id": 2,
+      "prefix": "Mr.",
+      "first_name": "Andi",
+      "middle_name": "Van",
+      "last_name": "Basten",
+      "legal_name": "Andi Van Basten",
+      "date_of_birth": "1986-02-02",
+      "contact_id": null
+    },
+    "relationships": {
+      "phones": {
+        "data": [
+          {
+            "attributes": {
+              "number": "+1 514-794-7740",
+              "country_code": "US",
+              "is_primary": true
+            }
+          }
+        ]
+      },
+      "emails": {
+        "data": [
+          {
+            "attributes": {
+              "email": "van_basten@example.com",
+              "is_primary": true
+            }
+          }
+        ]
+      },
+      "sources": {
+        "data": [
+          {
+            "attributes": {
+              "label": "MLS"
+            }
+          }
+        ]
+      },
+      "company": {
+        "data": {
+          "attributes": {
+            "name": "Vereenigde Oostindische"
+          }
+        }
+      }
+    }
+  }
+}

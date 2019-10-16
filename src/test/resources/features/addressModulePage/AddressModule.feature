@@ -90,3 +90,50 @@ Scenario Outline: Create, update, show and delete Address
  	Examples:
  	|ContactId	  |
  	|{(contactID)}|
+ 	
+ 	
+ @testing
+Scenario Outline: Multi delete Address
+	Given request body from static file "addressModulePage/requests/createContact.json"
+    And content type is "application/json"
+    And header "X-Api-Override-Phone" with value "1"
+    And header "x-Api-Override-Email" with value "1"
+    And header "X-Partial-Record-Validation" with value "1"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs POST request on "{(basePath)}"
+    Then status code is 201
+    And response is not empty
+    And let variable "contactID" equal to property "data.id" value
+    	
+    Given request body from file "addressModulePage/requests/createAddress.json" with values "<ContactId>" 
+    |%contactId%|
+    And content type is "application/json"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs POST request on "{(basePath)}/addresses"
+    Then status code is 201
+    And response is not empty
+    And let variable "addressId1" equal to property "data.id" value
+    
+    Given request body from file "addressModulePage/requests/createAddress.json" with values "<ContactId>" 
+    |%contactId%|
+    And content type is "application/json"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs POST request on "{(basePath)}/addresses"
+    Then status code is 201
+    And response is not empty
+    And let variable "addressId2" equal to property "data.id" value
+
+    
+    Given request body from file "addressModulePage/requests/DeleteMultiAddress.json" with values "<Address1>,<Address2>" 
+    |%address1%|%address2%|
+    And content type is "application/json"
+    And header "Accept" with value "application/vnd.api+json"
+    When the client performs DELETE request on "{(basePath)}/addresses"
+    Then status code is 200
+	
+	When the client performs DELETE request on "{(basePath)}/<ContactId>" 
+	Then status code is 204
+
+ 	Examples:
+ 	|ContactId	  |Address1	     |Address2	    |
+ 	|{(contactID)}|{(addressId1)}|{(addressId2)}|	

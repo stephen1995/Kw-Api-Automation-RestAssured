@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "id": "%address1%",
+      "type": "addresses"
+    },
+    {
+      "id": "%address2%",
+      "type": "addresses"
+    }
+  ]
+}

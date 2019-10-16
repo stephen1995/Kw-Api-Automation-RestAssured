@@ -1,5 +1,5 @@
 @SmokeTestFeature
-Feature: API Timeline Page
+Feature: API recruit Page
 
   Background:
     Given let variable "basePath" equal to "/v2/contacts"
@@ -7,7 +7,7 @@ Feature: API Timeline Page
 
 @POST @testing
     Scenario: Successful login
-      Given request body from static file "timelineModulePage/requests/login.json"
+      Given request body from static file "recruitModulePage/requests/login.json"
       And content type is "application/json"
       When the client performs POST request on "login"
       Then let variable "token" equal to property "access_token" value
