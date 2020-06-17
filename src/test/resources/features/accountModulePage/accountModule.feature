@@ -5,7 +5,7 @@ Feature: API Account v2
     Given let variable "basePath" equal to "communications/accounts"
     Given overwrite header Authorization with value "Bearer {(token)}"
 
-@testing
+@testing1
     Scenario: Successful login
       Given request body from static file "accountModulePage/requests/login.json"
       And content type is "application/json"
